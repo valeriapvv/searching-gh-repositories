@@ -25,9 +25,9 @@ const send = async ({
     onSuccess(data);
   } catch(error) {
     onFail(error);
-  } finally {
-    onFinal?.();
   }
+
+  onFinal();
 };
 
 export {
