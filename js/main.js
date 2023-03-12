@@ -1,13 +1,25 @@
-const repoName = 'myrepo';
+import {send} from './api.js';
 
-const query = `q=${encodeURIComponent(`${repoName} in:name`)}`;
+const urlEndPoint = 'https://api.github.com/search/repositories';
+const searchString = 'myrepo';
 
-fetch(`https://api.github.com/search/repositories?${query}`)
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
+const RESULTS_COUNT = 10;
 
-    data.items.slice(0, 10).forEach((element) => {
-      console.log(element);
+const onSuccess = (data) => {
+  data.items.slice(0 , RESULTS_COUNT)
+    .forEach((repo) => {
+      console.log(repo);
     });
-  });
+};
+
+const onFail = (error) => {
+  alert(error);
+};
+
+send({
+  urlEndPoint,
+  searchString,
+  onSuccess,
+  onFail,
+});
+
