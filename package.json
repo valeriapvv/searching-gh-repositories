@@ -1,5 +1,5 @@
 {
-  "name": "gh-search",
+  "name": "searching-gh-repositories",
   "private": true,
   "description": "Searching GitHub repositories",
   "devDependencies": {
