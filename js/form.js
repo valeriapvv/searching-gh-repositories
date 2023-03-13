@@ -1,3 +1,6 @@
+import {send} from './api.js';
+import {renderResult} from './render-repo-items.js';
+
 const form = document.querySelector('#search-form');
 const searchField = form['search'];
 const submitButton = form.querySelector('[type="submit"]');
@@ -19,28 +22,26 @@ const enableForm = () => {
   submitButton.textContent = SubmitText.Default;
 };
 
-const logData = (items) => {
-  for (const item of items) {
-    console.log(item);
-  }
-};
-
 const initForm = ({
   urlEndPoint,
   resultsCount,
-  send,
+  resultRenderPlace,
+  resultTitle,
 }) => {
   const onSuccess = (data) => {
-    const repoItems = data.items.slice(0 , resultsCount);
+    const repoItems = data.items?.slice(0, resultsCount) || [];
 
-    if (!repoItems || !repoItems.length) {
-      alert('No results found');
-      return;
-    }
-
-    logData(repoItems);
+    renderResult({
+      repoItems,
+      resultRenderPlace,
+      resultTitle,
+    });
 
     form.reset();
+  };
+
+  const onFail = (error) => {
+    alert(error);
   };
 
   const onSubmit = (evt) => {
@@ -52,7 +53,7 @@ const initForm = ({
       urlEndPoint,
       searchString,
       onSuccess,
-      onFail: alert,
+      onFail,
       onFinal: enableForm,
     });
 
