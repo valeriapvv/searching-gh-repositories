@@ -41,6 +41,7 @@ const initForm = ({
   };
 
   const onFail = (error) => {
+    // eslint-disable-next-line no-alert
     alert(error);
   };
 
