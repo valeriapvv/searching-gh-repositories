@@ -1,6 +1,6 @@
 import {getRepoItemTemplate} from './repo-item-template.js';
-import {Insert} from './constants.js';
-import {removeElement} from './utils.js';
+import {Insert} from '../constants.js';
+import {removeElement} from '../utils.js';
 
 const REPO_LIST_CLASS_NAME = 'main__list';
 const NO_RESULT_CLASS_NAME = 'main__no-result';

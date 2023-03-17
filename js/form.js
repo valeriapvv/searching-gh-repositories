@@ -1,5 +1,5 @@
 import {send} from './api.js';
-import {renderResult} from './render-repo-items.js';
+import {renderResult} from './render-result/render-result.js';
 
 const form = document.querySelector('#search-form');
 const searchField = form['search'];

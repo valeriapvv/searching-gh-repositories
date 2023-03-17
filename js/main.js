@@ -13,6 +13,3 @@ initForm({
   resultRenderPlace,
   resultTitle,
 });
-
-// const itemsContainer = document.querySelector('.main__list');
-// itemsContainer.insertAdjacentHTML('afterbegin', getRepoItemTemplate());
