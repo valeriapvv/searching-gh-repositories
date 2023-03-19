@@ -1,5 +1,5 @@
 # Searching GitHub repositories
-<p>Поиск GitHub-репозиториев по подстроке</p>
+<p>Поиск GitHub-репозиториев по подстроке (GitHub API)</p>
 <p>Опубликованная версия на GitHub Pages: https://valeriapvv.github.io/searching-gh-repositories/ </p>
 
 ## Запуск проекта локально
